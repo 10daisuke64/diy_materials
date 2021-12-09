@@ -23,18 +23,21 @@ img {
 input {
   appearance: none;
   -webkit-appearance: none;
-  border-radius: none;
+  border-radius: 0;
   border: none;
   background-color: transparent;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 input[type="text"],
 input[type="number"],
 select {
   font-size: 16px;
   font-family: 'Noto Sans JP', sans-serif;
-  padding: 8px;
-  border: 1px solid #999999;
+  padding: 4px 8px;
+  border: 1px solid #f2f2f2;
+  width: 100%;
 }
 
 /* ---------------------------
@@ -42,13 +45,8 @@ select {
 ----------------------------- */
 .wrapper {
   margin: 0 auto;
-  max-width: 1080px;
-  padding: 0 40px;
-}
-@media screen and (max-width: 480px) {
-  .wrapper {
-    padding: 0 20px;
-  }
+  max-width: 480px;
+  padding: 0 20px;
 }
 
 /* ---------------------------
@@ -76,6 +74,7 @@ select {
   align-items:center;
   justify-content: center;
   height: 40px;
+  margin-top: 32px;
 }
 .footer__copy {
   font-size: 10px;
@@ -87,25 +86,94 @@ select {
 ----------------------------- */
 .section {
   padding: 40px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+.section:last-of-type {
+  border-bottom: none;
 }
 .section-title {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
-  margin-bottom: 32px;
-}
-
-.form dl {
   margin-bottom: 16px;
 }
-.form dt {
-  margin-bottom: 4px;
+
+.select {
+  margin-bottom: 10px;
+  max-width: 208px;
 }
-.form .short {
-  max-width: 160px;
+.select select {
+  font-size: 14px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.radio label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f2f2f2;
+  position: relative;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+.radio-material label {
+  width: 100px;
+}
+.radio input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.radio img,
+.radio span {
+  position: relative;
+  z-index: 100;
+  display: block;
+  margin: 0 auto;
+  font-size: 12px;
+}
+.radio input:checked {
+  background-color: #ffd5a2;
+}
+
+.submit {
+  display: block;
+  font-size: 12px;
+  padding: 8px;
+  background-color: #333333;
+  color: #ffffff;
+  max-width: 80px;
+  margin-top: 16px;
+  margin-right: auto;
+  margin-left: 0;
+  width: 100%;
+}
+
+.price {
+  max-width: 106px;
   display: flex;
   align-items: center;
 }
-.form .short span {
+.price span {
   display: block;
   margin-left: 4px;
+  font-size: 12px;
+}
+
+.result-past {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-past__item {
+  width: 33.33%;
+  padding: 8px;
 }
